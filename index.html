@@ -33,6 +33,10 @@
         border-style: solid;
         padding: 4px;
       }
+
+      .hidden {
+        display: none;
+      }
     </style>
   </head>
 
@@ -42,9 +46,9 @@
 
     <input type="button" onclick="setHeaderClass()" value="Set header class" />
 
-    <button onclick="toggleAllHeadersClass()">Toggle all the H2 classes</button>
+    <button id="toggle-button" onclick="toggleAllHeadersClass()">Toggle all the H2 classes</button>
 
-    <button id="creation-button" onclick="createNewElement()">Create new element</button>
+    <button onclick="createNewElement()">Create new element</button>
 
     <div>
       <h2 id="demo-id">ID (#demo-id)</h2>
@@ -121,7 +125,10 @@
         }*/
       }
 
+
       const createNewElement = function() {
+
+        let creationButton = document.getElementById("toggle-button")
 
         // HERE WE ARE CREATING A NEW HTML NODE / HTML ELEMENT (DYNAMICALLY)
         // It will only live IN MEMORY, and it will be destroyed as soon as we exit the function
@@ -149,10 +156,13 @@
         // WE NOW WANT TO REMOVE THE CLICKED BUTTON
         
         // Step 1: select the button to be removed
-        let buttonToBeRemoved = document.getElementById("creation-button")
+        let buttonToBeRemoved = document.getElementById("toggle-button")
 
         // Step 2: remove the button
-        buttonToBeRemoved.remove()
+        //buttonToBeRemoved.remove()
+        //buttonToBeRemoved.hidden = !buttonToBeRemoved.hidden
+        //buttonToBeRemoved.style.display = "none"
+        buttonToBeRemoved.classList.toggle("hidden")
       }
 
     </script>
