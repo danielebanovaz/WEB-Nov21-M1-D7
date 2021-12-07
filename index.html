@@ -40,6 +40,8 @@
   <body>
     <h1>Accessing Elements in the DOM</h1>
 
+    <input type="button" onclick="setHeaderClass()" value="Set header class" />
+
     <div>
       <h2 id="demo-id">ID (#demo-id)</h2>
       <div>Access me by ID</div>
@@ -83,5 +85,18 @@
         <li>Third element inside a list</li>
       </ul>
     </div>
+
+    <script type="text/javascript">
+
+      const setHeaderClass = function() {
+
+        // First step: finding the "demo-id" element in the page
+        let demoIdNode = document.getElementById("demo-id")
+        
+        // Second step: add the "selected" class to it
+        demoIdNode.classList.toggle("selected")
+      }
+     
+    </script>
   </body>
 </html> 
