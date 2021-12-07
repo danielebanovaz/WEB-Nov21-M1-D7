@@ -42,6 +42,8 @@
 
     <input type="button" onclick="setHeaderClass()" value="Set header class" />
 
+    <button onclick="toggleAllHeadersClass()">Toggle all the H2 classes</button>
+
     <div>
       <h2 id="demo-id">ID (#demo-id)</h2>
       <div>Access me by ID</div>
@@ -97,6 +99,26 @@
         demoIdNode.classList.toggle("selected")
       }
      
+      const toggleAllHeadersClass = function() {
+
+        // First step: find all the H2 elements in our page
+        let headerNodes = document.getElementsByTagName("h2")
+
+        // Second step: toggle the "selected" class on them
+        for (let headerNode of headerNodes) {
+          headerNode.classList.toggle("selected")
+        }
+
+        /* The alternative above is just SYNTACTIC SUGAR
+        that is more concise than the alternative below
+
+        for (let i = 0; i < headerNodes.length; i++) {
+          let headerNode = headerNodes[i]
+
+          headerNode.classList.toggle("selected")
+        }*/
+      }
+
     </script>
   </body>
 </html> 
