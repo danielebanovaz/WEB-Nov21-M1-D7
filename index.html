@@ -44,6 +44,8 @@
 
     <button onclick="toggleAllHeadersClass()">Toggle all the H2 classes</button>
 
+    <button id="creation-button" onclick="createNewElement()">Create new element</button>
+
     <div>
       <h2 id="demo-id">ID (#demo-id)</h2>
       <div>Access me by ID</div>
@@ -117,6 +119,40 @@
 
           headerNode.classList.toggle("selected")
         }*/
+      }
+
+      const createNewElement = function() {
+
+        // HERE WE ARE CREATING A NEW HTML NODE / HTML ELEMENT (DYNAMICALLY)
+        // It will only live IN MEMORY, and it will be destroyed as soon as we exit the function
+        // UNLESS we attach it to some other PARENT in the DOM
+
+        let newElementNode = document.createElement("div")
+        // <div></div>
+
+        newElementNode.innerText = "Hi, I'm the new guy here"
+        // <div>Hi, I'm the new guy here</div>
+
+        newElementNode.style.color = "coral"
+        // <div style="color:coral;">Hi, I'm the new guy here</div>
+
+        // WE NOW ATTACH / APPEND THE NEWLY CREATED ELEMENT TO THE DOM
+        // From now on, it will show up in the page
+
+        // First step: find its new parent
+        let parentNode = document.getElementById("demo-id")
+
+        // Second step: attach the newly created element to that parent
+        parentNode.appendChild(newElementNode)
+
+
+        // WE NOW WANT TO REMOVE THE CLICKED BUTTON
+        
+        // Step 1: select the button to be removed
+        let buttonToBeRemoved = document.getElementById("creation-button")
+
+        // Step 2: remove the button
+        buttonToBeRemoved.remove()
       }
 
     </script>
