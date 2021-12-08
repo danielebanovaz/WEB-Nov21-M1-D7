@@ -162,7 +162,13 @@
         //e.target.remove()
       }
 
-      setHeaderClass()
+      window.onload = function() {
+        // Everything that should be executed as soon as the page is loaded and ready
+        // should belong to this function
+
+        // For instance, setting the header class...
+        setHeaderClass()
+      }      
 
     </script>
 
