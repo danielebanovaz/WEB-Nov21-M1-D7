@@ -71,8 +71,9 @@
     <div>
       <h2>Tag (article)</h2>
       <div id="article-container">
-        <article>Access me by tag (1)</article>
-        <article>Access me by tag (2)</article>
+        <!-- the function 'makeTextRed' is the LISTENER to the MOUSE OVER EVENT on this 'article' tag -->
+        <article onmouseover="changeTextColor(event, 'red')" onmouseleave="changeTextColor(event, 'black')" >Access me by tag (1)</article>
+        <article onmouseover="changeTextColor(event, 'red')" onmouseleave="changeTextColor(event, 'black')" >Access me by tag (2)</article>
       </div>
     </div>
 
@@ -100,6 +101,14 @@
     </div>
 
     <script type="text/javascript">
+
+      // This function is a LISTENER for an EVENT
+      // That means that WHENEVER the EVENT is HAPPENING
+      // this FUNCTION is CALLED
+      const changeTextColor = function(e, color) {
+        e.target.style.color = color
+        e.target.innerText += ">"
+      }
 
       const updateHeader = function(e) {
         
