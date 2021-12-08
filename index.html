@@ -53,7 +53,7 @@
     <br />
     <br />
     <label for="username">Username:</label>
-    <input id="username" type="text" placeholder="Write you username here" />
+    <input id="username" onkeyup="updateHeader(event)" type="text" placeholder="Write you username here" />
 
     <div>
       <h2 id="demo-id">ID (#demo-id)</h2>
@@ -100,6 +100,25 @@
     </div>
 
     <script type="text/javascript">
+
+      const updateHeader = function(e) {
+        
+        // We first get a reference to the 'demo-id' header in our page
+        let demoHeader = document.getElementById("demo-id")
+
+        // We change the inner text of the header to match the user input
+        demoHeader.innerText = e.target.value
+
+        // We get the key that the user just pressed
+        let pressedKey = e.key
+
+        // And we change the color of the header if it's CTRL, SHIFT or ALT
+        switch (pressedKey) {
+          case "Shift": demoHeader.style.color = "green"; break
+          case "Control": demoHeader.style.color = "blue"; break
+          case "Alt": demoHeader.style.color = "orange"; break
+        }
+      }
 
       const setHeaderClass = function() {
 
