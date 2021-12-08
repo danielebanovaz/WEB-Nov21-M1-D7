@@ -48,7 +48,7 @@
 
     <button id="toggle-button" onclick="toggleAllHeadersClass()">Toggle all the H2 classes</button>
 
-    <button onclick="createNewElement()">Create new element</button>
+    <button onclick="createNewElement(event)">Create new element</button>
 
     <br />
     <br />
@@ -131,7 +131,11 @@
       }
 
 
-      const createNewElement = function() {
+      const createNewElement = function(e) {
+
+        // 'e' is the event data
+        // it's a JavaScript object containing additional information about what happened
+        // (IE: mouse click coordinates, clicked mouse button, HTML element the user clicked on...)
 
         let creationButton = document.getElementById("toggle-button")
 
@@ -145,7 +149,7 @@
         let usernameNode = document.getElementById("username")
         let username = usernameNode.value
 
-        newElementNode.innerText = `Hi, I'm ${username}`
+        newElementNode.innerText = `Hi, I'm ${username} and I clicked on X: ${e.screenX} - Y: ${e.screenY}`
         // <div>Hi, I'm the new guy here</div>
 
         newElementNode.style.color = "coral"
@@ -162,15 +166,10 @@
 
 
         // WE NOW WANT TO REMOVE THE CLICKED BUTTON
-        
-        // Step 1: select the button to be removed
-        let buttonToBeRemoved = document.getElementById("toggle-button")
-
-        // Step 2: remove the button
-        //buttonToBeRemoved.remove()
-        //buttonToBeRemoved.hidden = !buttonToBeRemoved.hidden
-        //buttonToBeRemoved.style.display = "none"
-        buttonToBeRemoved.classList.toggle("hidden")
+        // With the event data 'e' we can remove the clicked button
+        // without the need for searching it in the page
+        // (we already have a reference to the clicked button in the e.target property)
+        e.target.remove()
       }
 
     </script>
