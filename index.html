@@ -50,6 +50,11 @@
 
     <button onclick="createNewElement()">Create new element</button>
 
+    <br />
+    <br />
+    <label for="username">Username:</label>
+    <input id="username" type="text" placeholder="Write you username here" />
+
     <div>
       <h2 id="demo-id">ID (#demo-id)</h2>
       <div>Access me by ID</div>
@@ -99,20 +104,20 @@
       const setHeaderClass = function() {
 
         // First step: finding the "demo-id" element in the page
-        let demoIdNode = document.getElementById("demo-id")
+        let demoIdNode = document.getElementById("demo-id") // This is a single element...
         
         // Second step: add the "selected" class to it
-        demoIdNode.classList.toggle("selected")
+        demoIdNode.classList.toggle("selected") // ...so we can modify it immediately
       }
      
       const toggleAllHeadersClass = function() {
 
         // First step: find all the H2 elements in our page
-        let headerNodes = document.getElementsByTagName("h2")
+        let headerNodes = document.getElementsByTagName("h2") // This is a COLLECTION of elements...
 
         // Second step: toggle the "selected" class on them
         for (let headerNode of headerNodes) {
-          headerNode.classList.toggle("selected")
+          headerNode.classList.toggle("selected") // ...so we need a FOR loop to process them all
         }
 
         /* The alternative above is just SYNTACTIC SUGAR
@@ -137,7 +142,10 @@
         let newElementNode = document.createElement("div")
         // <div></div>
 
-        newElementNode.innerText = "Hi, I'm the new guy here"
+        let usernameNode = document.getElementById("username")
+        let username = usernameNode.value
+
+        newElementNode.innerText = `Hi, I'm ${username}`
         // <div>Hi, I'm the new guy here</div>
 
         newElementNode.style.color = "coral"
