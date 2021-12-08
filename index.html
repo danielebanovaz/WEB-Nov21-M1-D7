@@ -42,63 +42,7 @@
 
 
   <body>
-    <h1>Accessing Elements in the DOM</h1>
 
-    <input type="button" onclick="setHeaderClass()" value="Set header class" />
-
-    <button id="toggle-button" onclick="toggleAllHeadersClass()">Toggle all the H2 classes</button>
-
-    <button onclick="createNewElement(event)">Create new element</button>
-
-    <br />
-    <br />
-    <label for="username">Username:</label>
-    <input id="username" onkeyup="updateHeader(event)" type="text" placeholder="Write you username here" />
-
-    <div>
-      <h2 id="demo-id">ID (#demo-id)</h2>
-      <div>Access me by ID</div>
-    </div>
-
-
-    <div>
-      <h2>Class (.demo-class)</h2>
-      <div class="demo-class">Access me by class (1)</div>
-      <div class="demo-class">Access me by class (2)</div>
-    </div>
-
-
-    <div>
-      <h2>Tag (article)</h2>
-      <div id="article-container">
-        <!-- the function 'makeTextRed' is the LISTENER to the MOUSE OVER EVENT on this 'article' tag -->
-        <article onmouseover="changeTextColor(event, 'red')" onmouseleave="changeTextColor(event, 'black')" >Access me by tag (1)</article>
-        <article onmouseover="changeTextColor(event, 'red')" onmouseleave="changeTextColor(event, 'black')" >Access me by tag (2)</article>
-      </div>
-    </div>
-
-
-    <div id="demo-query">
-      <h2>Query Selector</h2>
-      <div>Access me by query</div>
-    </div>
-
-
-    <div>
-      <h2>Query Selector All</h2>
-      <div class="demo-query-all">Access me by query all (1)</div>
-      <div class="demo-query-all">Access me by query all (2)</div>
-    </div>
-
-
-    <h2>A more complex query</h2>
-    <div id="more-complex">
-      <ul>
-        <li>First element inside a list</li>
-        <li>Second element inside a list</li>
-        <li>Third element inside a list</li>
-      </ul>
-    </div>
 
     <script type="text/javascript">
 
@@ -221,5 +165,64 @@
       setHeaderClass()
 
     </script>
+
+
+    <h1>Accessing Elements in the DOM</h1>
+
+    <input type="button" onclick="setHeaderClass()" value="Set header class" />
+
+    <button id="toggle-button" onclick="toggleAllHeadersClass()">Toggle all the H2 classes</button>
+
+    <button onclick="createNewElement(event)">Create new element</button>
+
+    <br />
+    <br />
+    <label for="username">Username:</label>
+    <input id="username" onkeyup="updateHeader(event)" type="text" placeholder="Write you username here" />
+
+    <div>
+      <h2 id="demo-id">ID (#demo-id)</h2>
+      <div>Access me by ID</div>
+    </div>
+
+
+    <div>
+      <h2>Class (.demo-class)</h2>
+      <div class="demo-class">Access me by class (1)</div>
+      <div class="demo-class">Access me by class (2)</div>
+    </div>
+
+
+    <div>
+      <h2>Tag (article)</h2>
+      <div id="article-container">
+        <!-- the function 'makeTextRed' is the LISTENER to the MOUSE OVER EVENT on this 'article' tag -->
+        <article onmouseover="changeTextColor(event, 'red')" onmouseleave="changeTextColor(event, 'black')" >Access me by tag (1)</article>
+        <article onmouseover="changeTextColor(event, 'red')" onmouseleave="changeTextColor(event, 'black')" >Access me by tag (2)</article>
+      </div>
+    </div>
+
+
+    <div id="demo-query">
+      <h2>Query Selector</h2>
+      <div>Access me by query</div>
+    </div>
+
+
+    <div>
+      <h2>Query Selector All</h2>
+      <div class="demo-query-all">Access me by query all (1)</div>
+      <div class="demo-query-all">Access me by query all (2)</div>
+    </div>
+
+
+    <h2>A more complex query</h2>
+    <div id="more-complex">
+      <ul>
+        <li>First element inside a list</li>
+        <li>Second element inside a list</li>
+        <li>Third element inside a list</li>
+      </ul>
+    </div>
   </body>
 </html> 
