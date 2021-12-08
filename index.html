@@ -194,7 +194,12 @@
         // This down here is equivalent to writing:
         // ...onmouseover="changeTextColor(event)"
         // in the static HTML code
-        newElementNode.onmouseover = changeTextColor
+        //newElementNode.onmouseover = changeTextColor
+
+        // This second alternative is more powerful, because it allows us
+        // to specify MORE THAN ONE listener to the event
+        newElementNode.addEventListener("mouseover", changeTextColor)
+        newElementNode.addEventListener("mouseover", createNewElement)
 
         // WE NOW ATTACH / APPEND THE NEWLY CREATED ELEMENT TO THE DOM
         // From now on, it will show up in the page
